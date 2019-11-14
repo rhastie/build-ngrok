@@ -1,1 +1,19 @@
+authtoken: <Auth Token Key>
+region: us
+console_ui: true
+http_proxy: false
+inspect_db_size: 5000000
+log_level: info
+log_format: json
+log: /home/ngrok/ngrok.log
 web_addr: 0.0.0.0:4040
+tunnels:
+  web:
+    addr: 443
+    proto: http
+    inspect: false
+    auth: mellanox:*Security1!
+  ssh:
+    addr: 22
+    proto: tcp
+

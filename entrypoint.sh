@@ -5,6 +5,12 @@ if [ $# -ne 0 ]; then
   exit 0
 fi
 
+if [ $(grep -c tunnels /home/ngrok/.ngrok2/ngrok.yml) -ne 0 ]
+then
+  exec ngrok start --all
+  exit 0       
+fi
+
 # Legacy compatible:
 if [ -z "$NGROK_PORT" ]; then
   if [ -n "$HTTPS_PORT" ]; then

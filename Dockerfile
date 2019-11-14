@@ -24,7 +24,8 @@ RUN  ngrok --version
 
 # Add config script.
 COPY --chown=ngrok ngrok.yml /home/ngrok/.ngrok2/
-COPY entrypoint.sh /
+COPY --chown=ngrok ngrok.yml /root/.ngrok2/
+COPY entrypoint.sh /home/ngrok
 
 USER ngrok
 ENV USER=ngrok
